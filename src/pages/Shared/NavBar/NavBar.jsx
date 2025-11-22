@@ -4,6 +4,7 @@ import { NavLink } from 'react-router';
 
 const NavBar = () => {
     const links = <>
+        <li><NavLink to= '/'>Home</NavLink></li>
         <li><NavLink to= ''>Services</NavLink></li>
         <li><NavLink to= ''>About Us</NavLink></li>
         <li><NavLink to= '/coverage'>Coverage</NavLink></li>
@@ -17,7 +18,7 @@ const NavBar = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-xl font-bold">
                         {links}
                     </ul>
                 </div>
@@ -26,7 +27,7 @@ const NavBar = () => {
                 </a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 text-xl font-bold">
                     {links}
                 </ul>
             </div>
