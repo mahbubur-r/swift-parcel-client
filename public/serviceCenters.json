@@ -1,0 +1,452 @@
+[
+  {
+    "region": "Bavaria",
+    "district": "Munich",
+    "city": "Munich",
+    "covered_area": ["Maxvorstadt", "Schwabing", "Altstadt", "Giesing"],
+    "status": "active",
+    "flowchart": "https://example.com/munich-flowchart.png",
+    "longitude": 11.5755,
+    "latitude": 48.1374
+  },
+  {
+    "region": "Bavaria",
+    "district": "Nuremberg",
+    "city": "Nuremberg",
+    "covered_area": ["Altstadt", "Gostenhof", "Südstadt", "Mögeldorf"],
+    "status": "active",
+    "flowchart": "https://example.com/nuremberg-flowchart.png",
+    "longitude": 11.0767,
+    "latitude": 49.4521
+  },
+  {
+    "region": "Bavaria",
+    "district": "Augsburg",
+    "city": "Augsburg",
+    "covered_area": ["Innenstadt", "Pfersee", "Lechhausen", "Göggingen"],
+    "status": "active",
+    "flowchart": "https://example.com/augsburg-flowchart.png",
+    "longitude": 10.8985,
+    "latitude": 48.3705
+  },
+  {
+    "region": "Bavaria",
+    "district": "Regensburg",
+    "city": "Regensburg",
+    "covered_area": ["Altstadt", "Kumpfmühl", "West", "Ost"],
+    "status": "active",
+    "flowchart": "https://example.com/regensburg-flowchart.png",
+    "longitude": 12.0991,
+    "latitude": 49.0139
+  },
+  {
+    "region": "Berlin",
+    "district": "Berlin-Mitte",
+    "city": "Berlin",
+    "covered_area": ["Mitte", "Kreuzberg", "Prenzlauer Berg", "Charlottenburg"],
+    "status": "active",
+    "flowchart": "https://example.com/berlin-mitte-flowchart.png",
+    "longitude": 13.4050,
+    "latitude": 52.5200
+  },
+  {
+    "region": "Berlin",
+    "district": "Berlin-Pankow",
+    "city": "Berlin",
+    "covered_area": ["Prenzlauer Berg", "Weißensee", "Pankow", "Blankenburg"],
+    "status": "active",
+    "flowchart": "https://example.com/berlin-pankow-flowchart.png",
+    "longitude": 13.4160,
+    "latitude": 52.5741
+  },
+  {
+    "region": "Berlin",
+    "district": "Berlin-Neukölln",
+    "city": "Berlin",
+    "covered_area": ["Neukölln", "Britz", "Rudow", "Buckow"],
+    "status": "active",
+    "flowchart": "https://example.com/berlin-neukoelln-flowchart.png",
+    "longitude": 13.4396,
+    "latitude": 52.4845
+  },
+  {
+    "region": "Hamburg",
+    "district": "Hamburg-Mitte",
+    "city": "Hamburg",
+    "covered_area": ["Altstadt", "HafenCity", "St. Pauli", "Hammerbrook"],
+    "status": "active",
+    "flowchart": "https://example.com/hamburg-mitte-flowchart.png",
+    "longitude": 9.9937,
+    "latitude": 53.5511
+  },
+  {
+    "region": "Hamburg",
+    "district": "Hamburg-Altona",
+    "city": "Hamburg",
+    "covered_area": ["Altona-Altstadt", "Ottensen", "Bahrenfeld", "Othmarschen"],
+    "status": "active",
+    "flowchart": "https://example.com/hamburg-altona-flowchart.png",
+    "longitude": 9.9360,
+    "latitude": 53.5525
+  },
+  {
+    "region": "Hamburg",
+    "district": "Hamburg-Wandsbek",
+    "city": "Hamburg",
+    "covered_area": ["Wandsbek", "Rahlstedt", "Tonndorf", "Eilbek"],
+    "status": "active",
+    "flowchart": "https://example.com/hamburg-wandsbek-flowchart.png",
+    "longitude": 10.0800,
+    "latitude": 53.6000
+  },
+  {
+    "region": "North Rhine-Westphalia",
+    "district": "Cologne",
+    "city": "Cologne",
+    "covered_area": ["Altstadt", "Deutz", "Ehrenfeld", "Nippes"],
+    "status": "active",
+    "flowchart": "https://example.com/cologne-flowchart.png",
+    "longitude": 6.9603,
+    "latitude": 50.9375
+  },
+  {
+    "region": "North Rhine-Westphalia",
+    "district": "Düsseldorf",
+    "city": "Düsseldorf",
+    "covered_area": ["Altstadt", "Oberkassel", "Flingern", "Bilk"],
+    "status": "active",
+    "flowchart": "https://example.com/dusseldorf-flowchart.png",
+    "longitude": 6.7735,
+    "latitude": 51.2277
+  },
+  {
+    "region": "North Rhine-Westphalia",
+    "district": "Dortmund",
+    "city": "Dortmund",
+    "covered_area": ["Innenstadt", "Hörde", "Eving", "Aplerbeck"],
+    "status": "active",
+    "flowchart": "https://example.com/dortmund-flowchart.png",
+    "longitude": 7.4653,
+    "latitude": 51.5136
+  },
+  {
+    "region": "North Rhine-Westphalia",
+    "district": "Bonn",
+    "city": "Bonn",
+    "covered_area": ["Zentrum", "Beuel", "Hardtberg", "Bad Godesberg"],
+    "status": "active",
+    "flowchart": "https://example.com/bonn-flowchart.png",
+    "longitude": 7.0982,
+    "latitude": 50.7374
+  },
+  {
+    "region": "Baden-Württemberg",
+    "district": "Stuttgart",
+    "city": "Stuttgart",
+    "covered_area": ["Mitte", "Bad Cannstatt", "Vaihingen", "Sillenbuch"],
+    "status": "active",
+    "flowchart": "https://example.com/stuttgart-flowchart.png",
+    "longitude": 9.1829,
+    "latitude": 48.7758
+  },
+  {
+    "region": "Baden-Württemberg",
+    "district": "Mannheim",
+    "city": "Mannheim",
+    "covered_area": ["Quadrate", "Feudenheim", "Neckarstadt", "Seckenheim"],
+    "status": "active",
+    "flowchart": "https://example.com/mannheim-flowchart.png",
+    "longitude": 8.4660,
+    "latitude": 49.4875
+  },
+  {
+    "region": "Baden-Württemberg",
+    "district": "Freiburg",
+    "city": "Freiburg",
+    "covered_area": ["Altstadt", "Stühlinger", "Wiehre", "Mooswald"],
+    "status": "active",
+    "flowchart": "https://example.com/freiburg-flowchart.png",
+    "longitude": 7.8421,
+    "latitude": 47.9990
+  },
+  {
+    "region": "Hesse",
+    "district": "Frankfurt",
+    "city": "Frankfurt",
+    "covered_area": ["Innenstadt", "Sachsenhausen", "Westend", "Bornheim"],
+    "status": "active",
+    "flowchart": "https://example.com/frankfurt-flowchart.png",
+    "longitude": 8.6821,
+    "latitude": 50.1109
+  },
+  {
+    "region": "Hesse",
+    "district": "Wiesbaden",
+    "city": "Wiesbaden",
+    "covered_area": ["Mitte", "Biebrich", "Dotzheim", "Sonnenberg"],
+    "status": "active",
+    "flowchart": "https://example.com/wiesbaden-flowchart.png",
+    "longitude": 8.2398,
+    "latitude": 50.0826
+  },
+  {
+    "region": "Hesse",
+    "district": "Kassel",
+    "city": "Kassel",
+    "covered_area": ["Mitte", "West", "Vorderer Westen", "Nordstadt"],
+    "status": "active",
+    "flowchart": "https://example.com/kassel-flowchart.png",
+    "longitude": 9.4797,
+    "latitude": 51.3127
+  },
+  {
+    "region": "Saxony",
+    "district": "Leipzig",
+    "city": "Leipzig",
+    "covered_area": ["Zentrum", "Plagwitz", "Connewitz", "Schleußig"],
+    "status": "active",
+    "flowchart": "https://example.com/leipzig-flowchart.png",
+    "longitude": 12.3731,
+    "latitude": 51.3397
+  },
+  {
+    "region": "Saxony",
+    "district": "Dresden",
+    "city": "Dresden",
+    "covered_area": ["Altstadt", "Neustadt", "Blasewitz", "Loschwitz"],
+    "status": "active",
+    "flowchart": "https://example.com/dresden-flowchart.png",
+    "longitude": 13.7373,
+    "latitude": 51.0504
+  },
+  {
+    "region": "Saxony",
+    "district": "Chemnitz",
+    "city": "Chemnitz",
+    "covered_area": ["Zentrum", "Siegmar", "Altchemnitz", "Gablenz"],
+    "status": "active",
+    "flowchart": "https://example.com/chemnitz-flowchart.png",
+    "longitude": 12.9214,
+    "latitude": 50.8278
+  },
+  {
+    "region": "Saxony-Anhalt",
+    "district": "Magdeburg",
+    "city": "Magdeburg",
+    "covered_area": ["Stadtfeld", "Altstadt", "Buckau", "Sudenburg"],
+    "status": "active",
+    "flowchart": "https://example.com/magdeburg-flowchart.png",
+    "longitude": 11.6276,
+    "latitude": 52.1205
+  },
+  {
+    "region": "Saxony-Anhalt",
+    "district": "Halle",
+    "city": "Halle",
+    "covered_area": ["Altstadt", "Burgviertel", "Giebichenstein", "Kröllwitz"],
+    "status": "active",
+    "flowchart": "https://example.com/halle-flowchart.png",
+    "longitude": 11.9683,
+    "latitude": 51.4969
+  },
+  {
+    "region": "Saxony-Anhalt",
+    "district": "Dessau",
+    "city": "Dessau",
+    "covered_area": ["Zentrum", "Nord", "Ost", "West"],
+    "status": "active",
+    "flowchart": "https://example.com/dessau-flowchart.png",
+    "longitude": 12.2412,
+    "latitude": 51.8381
+  },
+  {
+    "region": "Thuringia",
+    "district": "Erfurt",
+    "city": "Erfurt",
+    "covered_area": ["Altstadt", "Mitte", "Gispersleben", "Ilversgehofen"],
+    "status": "active",
+    "flowchart": "https://example.com/erfurt-flowchart.png",
+    "longitude": 11.0299,
+    "latitude": 50.9848
+  },
+  {
+    "region": "Thuringia",
+    "district": "Jena",
+    "city": "Jena",
+    "covered_area": ["Zentrum", "Lobeda", "Winzerla", "Wöllnitz"],
+    "status": "active",
+    "flowchart": "https://example.com/jena-flowchart.png",
+    "longitude": 11.5892,
+    "latitude": 50.9271
+  },
+  {
+    "region": "Thuringia",
+    "district": "Gera",
+    "city": "Gera",
+    "covered_area": ["Zentrum", "Lusan", "Bieblach", "Debschwitz"],
+    "status": "active",
+    "flowchart": "https://example.com/gera-flowchart.png",
+    "longitude": 12.0833,
+    "latitude": 50.8770
+  },
+  {
+    "region": "Schleswig-Holstein",
+    "district": "Kiel",
+    "city": "Kiel",
+    "covered_area": ["Innenstadt", "Düsternbrook", "Holtenau", "Viktring"],
+    "status": "active",
+    "flowchart": "https://example.com/kiel-flowchart.png",
+    "longitude": 10.1233,
+    "latitude": 54.3233
+  },
+  {
+    "region": "Schleswig-Holstein",
+    "district": "Lübeck",
+    "city": "Lübeck",
+    "covered_area": ["Altstadt", "St. Lorenz", "St. Jürgen", "Buntekuh"],
+    "status": "active",
+    "flowchart": "https://example.com/luebeck-flowchart.png",
+    "longitude": 10.6866,
+    "latitude": 53.8655
+  },
+  {
+    "region": "Schleswig-Holstein",
+    "district": "Flensburg",
+    "city": "Flensburg",
+    "covered_area": ["Altstadt", "Mürwik", "Westliche Höhe", "Südstadt"],
+    "status": "active",
+    "flowchart": "https://example.com/flensburg-flowchart.png",
+    "longitude": 9.4370,
+    "latitude": 54.7930
+  },
+  {
+    "region": "Lower Saxony",
+    "district": "Hanover",
+    "city": "Hanover",
+    "covered_area": ["Mitte", "Vahrenwald", "List", "Linden"],
+    "status": "active",
+    "flowchart": "https://example.com/hanover-flowchart.png",
+    "longitude": 9.7320,
+    "latitude": 52.3759
+  },
+  {
+    "region": "Lower Saxony",
+    "district": "Braunschweig",
+    "city": "Braunschweig",
+    "covered_area": ["Innenstadt", "Weststadt", "Südstadt", "Rautheim"],
+    "status": "active",
+    "flowchart": "https://example.com/braunschweig-flowchart.png",
+    "longitude": 10.5268,
+    "latitude": 52.2689
+  },
+  {
+    "region": "Lower Saxony",
+    "district": "Osnabrück",
+    "city": "Osnabrück",
+    "covered_area": ["Innenstadt", "Schölerberg", "Wüste", "Hellern"],
+    "status": "active",
+    "flowchart": "https://example.com/osnabrueck-flowchart.png",
+    "longitude": 8.0417,
+    "latitude": 52.2799
+  },
+  {
+    "region": "Mecklenburg-Vorpommern",
+    "district": "Rostock",
+    "city": "Rostock",
+    "covered_area": ["Innenstadt", "Kröpeliner-Tor-Vorstadt", "Warnemünde", "Dierkow"],
+    "status": "active",
+    "flowchart": "https://example.com/rostock-flowchart.png",
+    "longitude": 12.0991,
+    "latitude": 54.0924
+  },
+  {
+    "region": "Mecklenburg-Vorpommern",
+    "district": "Schwerin",
+    "city": "Schwerin",
+    "covered_area": ["Altstadt", "Mueßer Holz", "Friedrichsthal", "Neumühle"],
+    "status": "active",
+    "flowchart": "https://example.com/schwerin-flowchart.png",
+    "longitude": 11.4030,
+    "latitude": 53.6294
+  },
+  {
+    "region": "Mecklenburg-Vorpommern",
+    "district": "Neubrandenburg",
+    "city": "Neubrandenburg",
+    "covered_area": ["Altstadt", "Friedrich-Engels-Straße", "Weinhagen", "Südost"],
+    "status": "active",
+    "flowchart": "https://example.com/neubrandenburg-flowchart.png",
+    "longitude": 13.2770,
+    "latitude": 53.5611
+  },
+  {
+    "region": "Brandenburg",
+    "district": "Potsdam",
+    "city": "Potsdam",
+    "covered_area": ["Altstadt", "Babelsberg", "Nauener Vorstadt", "Bergstadt"],
+    "status": "active",
+    "flowchart": "https://example.com/potsdam-flowchart.png",
+    "longitude": 13.0669,
+    "latitude": 52.3967
+  },
+  {
+    "region": "Brandenburg",
+    "district": "Cottbus",
+    "city": "Cottbus",
+    "covered_area": ["Altstadt", "Ströbitz", "Sachsendorf", "Spremberger Vorstadt"],
+    "status": "active",
+    "flowchart": "https://example.com/cottbus-flowchart.png",
+    "longitude": 14.3289,
+    "latitude": 51.7572
+  },
+  {
+    "region": "Brandenburg",
+    "district": "Frankfurt (Oder)",
+    "city": "Frankfurt (Oder)",
+    "covered_area": ["Altstadt", "Breslauer Vorstadt", "Oderturm", "Kleistpark"],
+    "status": "active",
+    "flowchart": "https://example.com/frankfurt-oder-flowchart.png",
+    "longitude": 14.5506,
+    "latitude": 52.3396
+  },
+  {
+    "region": "Saarland",
+    "district": "Saarbrücken",
+    "city": "Saarbrücken",
+    "covered_area": ["Alt-Saarbrücken", "St. Johann", "Malstatt", "Burbach"],
+    "status": "active",
+    "flowchart": "https://example.com/saarbruecken-flowchart.png",
+    "longitude": 7.0000,
+    "latitude": 49.2333
+  },
+  {
+    "region": "Rhineland-Palatinate",
+    "district": "Mainz",
+    "city": "Mainz",
+    "covered_area": ["Altstadt", "Weisenau", "Gonsenheim", "Bretzenheim"],
+    "status": "active",
+    "flowchart": "https://example.com/mainz-flowchart.png",
+    "longitude": 8.2473,
+    "latitude": 49.9929
+  },
+  {
+    "region": "Rhineland-Palatinate",
+    "district": "Koblenz",
+    "city": "Koblenz",
+    "covered_area": ["Altstadt", "Lützel", "Oberwerth", "Neuendorf"],
+    "status": "active",
+    "flowchart": "https://example.com/koblenz-flowchart.png",
+    "longitude": 7.5986,
+    "latitude": 50.3569
+  },
+  {
+    "region": "Rhineland-Palatinate",
+    "district": "Trier",
+    "city": "Trier",
+    "covered_area": ["Altstadt", "Pfaffendorf", "Euren", "Nordallee"],
+    "status": "active",
+    "flowchart": "https://example.com/trier-flowchart.png",
+    "longitude": 6.6436,
+    "latitude": 49.7499
+  }
+]
