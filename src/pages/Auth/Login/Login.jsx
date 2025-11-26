@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../hooks/useAuth';
 import { Link } from 'react-router';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -23,7 +24,7 @@ const Login = () => {
     return (
         <div>
             
-            <form onSubmit={handleSubmit(handleSignin)}>
+            <form className='card-body' onSubmit={handleSubmit(handleSignin)}>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <h3 className='text-3xl text-center font-bold mt-5'>Welcome Back!</h3>
                     <p className='text-xl text-center font-bold mt-2'>Please login!</p>
@@ -54,12 +55,14 @@ const Login = () => {
                                 errors.password?.type === 'pattern' && <p className='text-red-500'>At least one uppercase, one lowercase, one number and one symbol!</p>
                             }
                             <div><a className="link link-hover">Forgot password?</a></div>
-                            <button className="btn btn-neutral mt-4">Login</button>
+                            <button className="btn btn-primary  text-black font-bold mt-4">Login</button>
+                            <SocialLogin></SocialLogin>
                         </fieldset>
-                        <p className='text-center'>New to SwiftParcel? <Link to='/register' className='text-blue-600 font-bold'>Register</Link></p>
+                        <p className='text-center'>New to SwiftParcel? <Link to='/register' className='text-blue-600 font-bold underline'>Register</Link></p>
                     </div>
                 </div>
             </form>
+            
         </div>
     );
 };
