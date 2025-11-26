@@ -24,6 +24,7 @@ const Coverage = () => {
 
     return (
         <div>
+            <title>Coverage</title>
             <h2 className='text-5xl font-bold text-center my-5 text-secondary'>Available in 16 Federal States in Germany</h2>
             <div className='my-5'>
                 <form onSubmit={handleSearch}>

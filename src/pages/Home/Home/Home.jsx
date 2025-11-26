@@ -10,6 +10,7 @@ const reviewsPromise = fetch('/reviews.json').then(res => res.json());
 const Home = () => {
     return (
         <div>
+            <title>SwiftParcel-Home</title>
             <Banner></Banner>  
             <OurServices></OurServices>
             <HowItWorks></HowItWorks>
