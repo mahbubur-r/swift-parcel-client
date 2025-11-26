@@ -1,12 +1,23 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../../hooks/useAuth';
 
 
 const Register = () => {
-    const {register, handleSubmit, formState: {errors}} = useForm();
+    const {register, handleSubmit, formState: {errors}} = useForm(); 
+    const {registerUser} = useAuth();
 
-    const handleRegister = (data)=>{
+    const handleRegister= (data)=>{
         console.log('after register',data);
+        registerUser(data.email, data.password)
+        .then(result => {
+            console.log(result.user);
+            
+        })
+        .catch(error => {
+            console.log(error);
+            
+        })
         
     }
 
@@ -28,6 +39,7 @@ const Register = () => {
                             <label className="label">Password</label>
                             <input type="password" {...register('password', {
                                 required: true,
+                                pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{8,}$/,
                                 minLength: 6})} className="input" placeholder="Password" />
                                 {
                                     errors.password?.type==='required'&& <p className='text-red-500'>Password is required</p>
@@ -35,8 +47,10 @@ const Register = () => {
                                 {
                                     errors.password?.type==='minLength' && <p className='text-red-500'> Password must be 6 character or long</p>
                                 }
-                            <div><a className="link link-hover">Forgot password?</a></div>
-                            <button className="btn btn-neutral mt-4">Login</button>
+                                {
+                                    errors.password?.type==='pattern'&& <p className='text-red-500'>At least one uppercase, one lowercase, one number and one symbol!</p>
+                                }
+                            <button className="btn btn-neutral mt-4">Register</button>
                         </fieldset>
                     </div>
                 </div>
