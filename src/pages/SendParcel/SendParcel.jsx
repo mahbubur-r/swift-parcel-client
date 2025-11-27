@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { BsTextarea } from 'react-icons/bs';
 import { useLoaderData } from 'react-router';
+import Swal from 'sweetalert2';
 
 const SendParcel = () => {
     const { register, handleSubmit, control, formState: { errors } } = useForm();
@@ -12,7 +13,7 @@ const SendParcel = () => {
     const regions = [...new Set(regionsDuplicate)]
     // console.log(regions);
     const senderRegion = useWatch({ control, name: 'senderRegion' });
-    const receiverRegion = useWatch({control, name: 'receiverRegion'})
+    const receiverRegion = useWatch({ control, name: 'receiverRegion' })
 
 
 
@@ -27,16 +28,55 @@ const SendParcel = () => {
     const handleSendParcel = data => {
         // console.log(data);
         // calculatee the cost
-        // const sameDistrict = data.senderDistrict === data.reveiverDistrict
-        // console.log(sameDistrict);
-        
+        const isDocument = data.parcelType === 'document'
+        const isSameDistrict = data.senderDistrict === data.receiverDistrict
+        console.log(isSameDistrict);
+        const parcelWeight = parseFloat(data.parcelWeight);
+
+        let cost = 0;
+        if (isDocument) {
+            cost = isSameDistrict ? 60 : 80;
+
+        }
+        else {
+            if (parcelWeight < 3) {
+                cost = isSameDistrict ? 110 : 150;
+            }
+            else {
+                const minCharge = isSameDistrict ? 110 : 150;
+                const extraWeight = parcelWeight - 3;
+                const extraCharge = isSameDistrict ? extraWeight * 40 :
+                    extraWeight * 40 + 40;
+                cost = minCharge + extraCharge;
+            }
+        }
+
+        console.log('cost:', cost);
+
+        Swal.fire({
+            title: "Agree with the cost?",
+            text: `You will be charged ${cost} EUR!`,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, I will pay!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Confirmed!",
+                    text: "Your parcel has been processed for delovery.",
+                    icon: "success"
+                });
+            }
+        });
 
     }
 
     return (
 
         <div>
-            <h2 className="text-5xl font-bold">Send a Parcel</h2>
+            <h2 className="text-5xl text-center mt-5 font-bold">Send a Parcel</h2>
             <form onSubmit={handleSubmit(handleSendParcel)} className='mt-12 p-4 text-black'>
                 {/* Document */}
                 <div className='mr-5'>
