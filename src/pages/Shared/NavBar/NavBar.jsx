@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from '../../../components/Logo/Logo';
 import { Link, NavLink } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
+import { FaLocationArrow } from 'react-icons/fa';
 
 const NavBar = () => {
     const {user, logOut} = useAuth();
@@ -21,6 +22,7 @@ const NavBar = () => {
         <li><NavLink to= '/'>Home</NavLink></li>
         <li><NavLink to= ''>Services</NavLink></li>
         <li><NavLink to= ''>About Us</NavLink></li>
+        <li><NavLink to= '/send-parcel'>Send Parcel</NavLink></li>
         <li><NavLink to= '/coverage'>Coverage</NavLink></li>
     </>
     return (
@@ -49,7 +51,7 @@ const NavBar = () => {
                 {
                    user ? <button onClick={handleLogout} className="btn text-lg">Logout</button>:<Link to='/login'><button className="btn text-lg">Login</button></Link>
                 }
-                <Link to='/rider'><button className="btn btn-primary text-black text-lg">Be a Rider</button></Link>
+                <Link to='/rider'><button className="btn btn-primary text-black text-lg">Be a Rider<FaLocationArrow /></button></Link>
             </div>
 
         </div>
