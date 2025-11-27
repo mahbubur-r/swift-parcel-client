@@ -1,18 +1,23 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../hooks/useAuth';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { signinUser} = useAuth();
+    const location = useLocation();
+    const navigate = useNavigate
+    console.log('in the login page', );
+    
 
     const handleSignin = (data) => {
         console.log('after register', data);
         signinUser(data.email, data.password)
             .then(result => {
                 console.log(result.user);
+                navigate(location?.state || '/')
 
             })
             .catch(error => {
@@ -58,7 +63,9 @@ const Login = () => {
                             <button className="btn btn-primary  text-black font-bold mt-4">Login</button>
                             <SocialLogin></SocialLogin>
                         </fieldset>
-                        <p className='text-center'>New to SwiftParcel? <Link to='/register' className='text-blue-600 font-bold underline'>Register</Link></p>
+                        <p className='text-center'>New to SwiftParcel? <Link
+                        state={location.state} 
+                        to='/register' className='text-blue-600 font-bold underline'>Register</Link></p>
                     </div>
                 </div>
             </form>
