@@ -1,20 +1,20 @@
 import React from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { BsTextarea } from 'react-icons/bs';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import useAuth from '../../hooks/useAuth';
 
 const SendParcel = () => {
-    const { 
-        register, 
-        handleSubmit, 
-        control, 
+    const {
+        register,
+        handleSubmit,
+        control,
         // formState: { errors } 
     } = useForm();
 
-    const {user}= useAuth();
+    const { user } = useAuth();
     // call the axios secure
     const axiosSecure = useAxiosSecure();
 
@@ -25,6 +25,9 @@ const SendParcel = () => {
     // console.log(regions);
     const senderRegion = useWatch({ control, name: 'senderRegion' });
     const receiverRegion = useWatch({ control, name: 'receiverRegion' })
+
+
+    const navigate = useNavigate()
 
 
 
@@ -46,23 +49,24 @@ const SendParcel = () => {
 
         let cost = 0;
         if (isDocument) {
-            cost = isSameDistrict ? 60 : 80;
+            cost = isSameDistrict ? 6 : 8;
 
         }
         else {
             if (parcelWeight < 3) {
-                cost = isSameDistrict ? 110 : 150;
+                cost = isSameDistrict ? 11 : 15;
             }
             else {
-                const minCharge = isSameDistrict ? 110 : 150;
+                const minCharge = isSameDistrict ? 11 : 15;
                 const extraWeight = parcelWeight - 3;
-                const extraCharge = isSameDistrict ? extraWeight * 40 :
-                    extraWeight * 40 + 40;
+                const extraCharge = isSameDistrict ? extraWeight * 4 :
+                    extraWeight * 4 + 4;
                 cost = minCharge + extraCharge;
             }
         }
 
         console.log('cost:', cost);
+        data.cost = cost;
 
         Swal.fire({
             title: "Agree with the cost?",
@@ -71,20 +75,27 @@ const SendParcel = () => {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, I will pay!"
+            confirmButtonText: "Confirm and Continue to Payment!"
         }).then((result) => {
             if (result.isConfirmed) {
                 // save the parcel info to the database
                 axiosSecure.post('/parcels', data)
-                    .then(res=> {
-                        console.log('after saving parcel', res.data);                      
+                    .then(res => {
+                        console.log('after saving parcel', res.data);
+                        if (res.data.insertedId) {
+                            // after added one parcel it will redirect to payment page.
+                            navigate('/dashboard/my-parcels')
+
+                            Swal.fire({
+                                title: "Confirmed!",
+                                text: "Your parcel has been processed for delovery and pay now.",
+                                icon: "success",
+                                timer: 2500,
+                            });
+                        }
                     })
 
-                // Swal.fire({
-                //     title: "Confirmed!",
-                //     text: "Your parcel has been processed for delovery.",
-                //     icon: "success"
-                // });
+
             }
         });
 
@@ -124,15 +135,15 @@ const SendParcel = () => {
                         {/* sender */}
                         <fieldset className="fieldset">
                             <label className="label">Sender Name</label>
-                            
+
                             <input type="text" {...register('senderName')}
-                            defaultValue={user?.displayName} className="input w-full" placeholder="Sender Name" />
+                                defaultValue={user?.displayName} className="input w-full" placeholder="Sender Name" />
                         </fieldset>
                         <fieldset className="fieldset">
                             <label className="label">Sender Email</label>
-                            <input type="email" {...register('senderEmail')} 
-                            defaultValue={user?.email}
-                            className="input w-full" placeholder="Sender Email" />
+                            <input type="email" {...register('senderEmail')}
+                                defaultValue={user?.email}
+                                className="input w-full" placeholder="Sender Email" />
                         </fieldset>
                         <fieldset className="fieldset">
                             <label className="label">Sender Number</label>
