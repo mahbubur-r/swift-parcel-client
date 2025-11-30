@@ -35,6 +35,8 @@ const AuthProvider = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             setLoading(false);
+            // console.log(currentUser);
+            
         })
         return () => {
             unSubscribe();
@@ -45,7 +47,7 @@ const AuthProvider = ({ children }) => {
         user,
         loading,
         registerUser,
-        signinUser,
+        signinUser,   
         googleSignin,
         setUser,
         setLoading,
