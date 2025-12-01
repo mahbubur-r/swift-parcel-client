@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
-import { FaCheckCircle, FaCheckSquare, FaTrash } from 'react-icons/fa';
+import { FaCheckCircle, FaCheckSquare, FaEye, FaTrash } from 'react-icons/fa';
 import { IoIosRemoveCircle } from 'react-icons/io';
 import Swal from 'sweetalert2';
 
@@ -73,9 +73,11 @@ const ApproveRiders = () => {
                                 </td>
                                 <td>{rider.district}</td>
                                 <td>
+                                    <button className='btn p-2'><FaEye /></button>
                                     <button onClick={() => handleApproval(rider)} className='btn p-2'><FaCheckSquare /></button>
                                     <button onClick={()=> handleRejection(rider)} className='btn p-2'><IoIosRemoveCircle /></button>
                                     <button className='btn p-2'><FaTrash /></button>
+                                    
                                 </td>
                             </tr>)
                         }
