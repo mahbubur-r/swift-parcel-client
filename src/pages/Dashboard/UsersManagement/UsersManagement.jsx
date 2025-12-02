@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { FaUserShield } from 'react-icons/fa';
 import { HiUserRemove } from 'react-icons/hi';
@@ -9,25 +9,18 @@ import Swal from 'sweetalert2';
 const UsersManagement = () => {
 
     const axiosSecure = useAxiosSecure()
+    // states for find users
+    const [searchText, setSearchText] = useState('')
     const { refetch, data: users = [] } = useQuery({
-        queryKey: ['users'],
+        queryKey: ['users', searchText],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/users`);
-            return res.data
+            const res = await axiosSecure.get(`/users?searchText=${searchText}`);
+            return res.data;
         }
     })
-    const handleMakeUser = user => {
+    const handleMakeAdmin = user => {
         const roleInfo = { role: 'admin' }
-        // Swal.fire({
-        //     title: "Agree with the cost?",
-        //     text: `Do you want to change ${user.displayName} role?`,
-        //     icon: "warning",
-        //     showCancelButton: true,
-        //     confirmButtonColor: "#3085d6",
-        //     cancelButtonColor: "#d33",
-        //     confirmButtonText: "Confirm and Continue!"
-        // })
-        axiosSecure.patch(`/users/${user._id}`, roleInfo)
+        axiosSecure.patch(`/users/${user._id}/role`, roleInfo)
             .then(res => {
                 console.log(res.data);
 
@@ -55,7 +48,7 @@ const UsersManagement = () => {
         //     cancelButtonColor: "#d33",
         //     confirmButtonText: "Confirm and Continue to Payment!"
         // })
-        axiosSecure.patch(`/users/${user._id}`, roleInfo)
+        axiosSecure.patch(`/users/${user._id}/role`, roleInfo)
             .then(res => {
                 console.log(res.data);
 
@@ -74,6 +67,30 @@ const UsersManagement = () => {
     return (
         <div>
             <h2 className='text-3xl font-semibold text-center my-5'>Manage Users: {users.length}</h2>
+            <p>Search Text: {searchText}</p>
+
+            <label className="input">
+                <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeWidth="2.5"
+                        fill="none"
+                        stroke="currentColor"
+                    >
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </g>
+                </svg>
+                <input 
+                onChange={(e)=> setSearchText(e.target.value)}
+
+                type="search" 
+                className="grow" 
+                placeholder="Search User" />
+                <kbd className="kbd kbd-sm">⌘</kbd>
+                <kbd className="kbd kbd-sm">K</kbd>
+            </label>
 
             <div className="overflow-x-auto">
                 <table className="table">
@@ -115,7 +132,7 @@ const UsersManagement = () => {
                             <th>
                                 {
                                     user.role === 'admin' ? <button onClick={() => handleRemoveAdmin(user)} className="btn bg-red-400"><FiShieldOff></FiShieldOff></button>
-                                        : <button onClick={() => handleMakeUser(user)} className="btn bg-green-400"><FaUserShield /></button>
+                                        : <button onClick={() => handleMakeAdmin(user)} className="btn bg-green-400"><FaUserShield /></button>
                                 }
 
 

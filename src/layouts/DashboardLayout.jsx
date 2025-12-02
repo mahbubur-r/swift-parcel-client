@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link, NavLink, Outlet } from 'react-router';
 import { TbTruckDelivery } from "react-icons/tb";
-import { FaRegCreditCard, FaUsers } from "react-icons/fa";
-import { RiEBike2Fill } from 'react-icons/ri';
+import { FaMotorcycle, FaRegCreditCard, FaUsers } from "react-icons/fa";
+import { RiEBike2Fill, RiEBikeFill } from 'react-icons/ri';
 import useRole from '../hooks/useRole';
+import { MdDirectionsBike } from 'react-icons/md';
+import { GiFullMotorcycleHelmet } from 'react-icons/gi';
+import { BsBagPlusFill } from 'react-icons/bs';
 
 const DashboardLayout = () => {
     const { role } = useRole();
+    console.log(role);
+
 
     return (
         <div className="drawer lg:drawer-open max-w-7xl mx-auto">
@@ -47,28 +52,53 @@ const DashboardLayout = () => {
                                 <FaRegCreditCard /><span className="is-drawer-close:hidden">Payment History</span>
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink to='/dashboard/approve-riders' className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Approve Rides" >
-                                <RiEBike2Fill /><span className="is-drawer-close:hidden">Approve Rides</span>
+
+                        {/* <li>
+                            <NavLink className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Approve Riders" to="/dashboard/approve-riders">
+                                <FaMotorcycle />
+                                <span className="is-drawer-close:hidden">Approve Riders</span>
                             </NavLink>
                         </li>
-                        {/* {
+                        <li>
+                            <NavLink className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Users Management" to="/dashboard/users-management">
+                                <FaUsers></FaUsers>
+                                <span className="is-drawer-close:hidden">Users Management</span>
+                            </NavLink>
+                        </li> */}
+
+
+                        {
                             role === 'admin' && <>
                                 <li>
-                                    <NavLink to='/dashboard/users-management' className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Users Managements" >
-                                        <FaUsers /><span className="is-drawer-close:hidden">Users Managements</span>
+                                    <NavLink className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Approve Riders" to="/dashboard/approve-riders">
+                                        <MdDirectionsBike />
+                                        <span className="is-drawer-close:hidden">Approve Riders</span>
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Assign Riders" to="/dashboard/assign-riders">
+                                   <BsBagPlusFill />
+                                        
+                                        <span className="is-drawer-close:hidden">Assign Riders</span>
                                     </NavLink>
                                 </li>
 
+                                <li>
+                                    <NavLink className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Users Management" to="/dashboard/users-management">
+                                        <FaUsers></FaUsers>
+                                        <span className="is-drawer-close:hidden">Users Management</span>
+                                    </NavLink>
+                                </li>
                             </>
-                        } */}
+                        }
 
-                        <li>
-                            <NavLink to='/dashboard/users-management' className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Users Managements" >
-                                <FaUsers /><span className="is-drawer-close:hidden">Users Managements</span>
+
+                        {/* <li>
+                            <NavLink className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Assign Riders" to="/dashboard/assign-riders">
+                                <RiEBikeFill />
+                                <span className="is-drawer-close:hidden">Assign Riders</span>
                             </NavLink>
-                        </li>
-
+                        </li> */}
 
                         {/* List item */}
                         <li>

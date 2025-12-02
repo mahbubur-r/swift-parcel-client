@@ -12,6 +12,7 @@ const ApproveRiders = () => {
         queryFn: async () => {
             const res = await axiosSecure.get('/riders');
             return res.data;
+
         }
     })
 
@@ -56,6 +57,7 @@ const ApproveRiders = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Application Status</th>
+                            <th>Work Status</th>
                             <th>Location</th>
                             <th>Actions</th>
                         </tr>
@@ -71,6 +73,7 @@ const ApproveRiders = () => {
                                     <p className={`${rider.status === 'approved' ? 'text-green-500 font-bold' : 'text-red-500 font-bold'} `}>{rider.status}</p>
 
                                 </td>
+                                <td>{rider.workStatus}</td>
                                 <td>{rider.district}</td>
                                 <td>
                                     <button className='btn p-2'><FaEye /></button>
@@ -79,6 +82,7 @@ const ApproveRiders = () => {
                                     <button className='btn p-2'><FaTrash /></button>
                                     
                                 </td>
+                                
                             </tr>)
                         }
 

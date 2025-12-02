@@ -54,8 +54,6 @@ const MyParcels = () => {
             }
         });
         // console.log(id);
-
-
     }
 
 
@@ -88,6 +86,7 @@ const MyParcels = () => {
                             <th>Cost</th>
                             <th>Payment</th>
                             <th>Delivery Status</th>
+                            <th>Delivery Tracking ID</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -108,6 +107,7 @@ const MyParcels = () => {
                                         }
                                     </td>
                                     <td>{parcel.deliveryStatus}</td>
+                                    <td>{parcel.trackingId}</td>
                                     <td>
                                         <button className='btn btn-square hover:bg-primary'>
                                             <CgDetailsMore />
