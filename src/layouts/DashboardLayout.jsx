@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link, NavLink, Outlet } from 'react-router';
 import { TbTruckDelivery } from "react-icons/tb";
-import { FaMotorcycle, FaRegCreditCard, FaUsers } from "react-icons/fa";
+import { FaMotorcycle, FaRegCreditCard, FaTasks, FaUsers } from "react-icons/fa";
 import { RiEBike2Fill, RiEBikeFill } from 'react-icons/ri';
 import useRole from '../hooks/useRole';
 import { MdDirectionsBike } from 'react-icons/md';
 import { GiFullMotorcycleHelmet } from 'react-icons/gi';
 import { BsBagPlusFill } from 'react-icons/bs';
+import { SiGoogletasks } from "react-icons/si";
 
 const DashboardLayout = () => {
     const { role } = useRole();
@@ -66,6 +67,26 @@ const DashboardLayout = () => {
                             </NavLink>
                         </li> */}
 
+                        {/* Rider Role */}
+                        {
+                            role === 'rider' && <>
+                                <li>
+                                    <NavLink className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Assigned Deliveries" to="/dashboard/assigned-deliveries">
+                                        <FaTasks />
+                                        <span className="is-drawer-close:hidden">Assigned Deliveries</span>
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Completed Deliveries" to="/dashboard/completed-deliveries">
+                                        <SiGoogletasks />
+                                        <span className="is-drawer-close:hidden">Completed Deliveries</span>
+                                    </NavLink>
+                                </li>
+                            </>
+                        }
+
+
+                        {/* Admin Route */}
 
                         {
                             role === 'admin' && <>
@@ -77,8 +98,8 @@ const DashboardLayout = () => {
                                 </li>
                                 <li>
                                     <NavLink className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Assign Riders" to="/dashboard/assign-riders">
-                                   <BsBagPlusFill />
-                                        
+                                        <BsBagPlusFill />
+
                                         <span className="is-drawer-close:hidden">Assign Riders</span>
                                     </NavLink>
                                 </li>

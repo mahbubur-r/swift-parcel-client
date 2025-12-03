@@ -18,32 +18,42 @@ import ApproveRiders from "../pages/Dashboard/ApproveRiders/ApproveRiders";
 import UsersManagement from "../pages/Dashboard/UsersManagement/UsersManagement";
 import AdminRoute from "./AdminRoute";
 import AssignRiders from "../pages/Dashboard/AssignRiders/AssignRiders";
+import AssignedDeliveries from "../pages/Dashboard/AssignedDeliveries/AssignedDeliveries";
+import CompletedDeliveries from "../pages/Dashboard/CompletedDeliveries/CompletedDeliveries";
+import RiderRoutes from "./RiderRoutes";
+import ParcelTrack from "../pages/ParcelTrack/ParcelTrack";
 
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
-    children : [
-        {
-            index: true,
-            Component: Home,
-        },
-        {
-          path: '/rider',
-          element: <PrivateRoutes><Rider></Rider></PrivateRoutes>,
-          loader: ()=> fetch('/serviceCenters.json').then(res => res.json())
-        },
-        {
-          path: '/send-parcel',
-          element: <PrivateRoutes><SendParcel></SendParcel></PrivateRoutes>,
-          loader: ()=> fetch('/serviceCenters.json').then(res => res.json())
-        },
-        {
-            path: '/coverage',
-            Component: Coverage,
-            loader: ()=> fetch('/serviceCenters.json').then(res => res.json())
-        }
+    children: [
+      {
+        index: true,
+        Component: Home,
+      },
+      {
+        path: '/rider',
+        element: <PrivateRoutes><Rider></Rider></PrivateRoutes>,
+        loader: () => fetch('/serviceCenters.json').then(res => res.json())
+      },
+      {
+        path: '/send-parcel',
+        element: <PrivateRoutes><SendParcel></SendParcel></PrivateRoutes>,
+        loader: () => fetch('/serviceCenters.json').then(res => res.json())
+      },
+      {
+        path: '/coverage',
+        Component: Coverage,
+        loader: () => fetch('/serviceCenters.json').then(res => res.json())
+      },
+      {
+        path:'/dashboard/my-parcels/parcel-track/:trackingId',
+        Component: ParcelTrack
+      },
+
+
     ]
   },
   {
@@ -83,6 +93,18 @@ export const router = createBrowserRouter([
       {
         path: 'payment-cancelled',
         Component: PaymentCancelled
+      },
+      
+
+
+      // riders only routes
+      {
+        path: 'assigned-deliveries',
+        element: <RiderRoutes><AssignedDeliveries></AssignedDeliveries></RiderRoutes>,
+      },
+      {
+        path: 'completed-deliveries',
+        element: <RiderRoutes><CompletedDeliveries></CompletedDeliveries></RiderRoutes>,
       },
       {
         path: 'approve-riders',
